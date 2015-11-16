@@ -1,0 +1,1 @@
+# Lookout-impact.js-game
