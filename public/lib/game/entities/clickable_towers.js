@@ -53,12 +53,12 @@ ig.module(
 			this.find_attack();
 			this.cattack= this.attack_power*200*ig.game.player.costfactor;
 			this.chealth= this.maxhealth*1.5*ig.game.player.costfactor;
-			if (this.regenTimer.delta()>=0){
+			
 				if (this.health>0 && this.health<=this.maxhealth){
 					this.health +=(this.maxhealth-this.health) * this.regen_power/10;
 					this.regenTimer.reset();
 				}
-			}
+			
 
 
 			//cheange to not select
