@@ -1,6 +1,6 @@
 spend many revision over the semester on this final project.
 <br>Currently posted on course website: https://people.cs.umass.edu/~ctinckne/cs397j/arcade/YLiang/
-<br>hosted site: https://lookout-impactjsgame.herokuapp.com/
+<br>hosted site: https://windytower-game.herokuapp.com/
 
 #Implementation Features Detail:
 ###level/ templates:
