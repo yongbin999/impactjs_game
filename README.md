@@ -1,15 +1,27 @@
-spend many revision over the semester on this final project.
-<br>Currently posted on course website: https://people.cs.umass.edu/~ctinckne/cs397j/arcade/YLiang/
+spend many revision over this project.
 <br>hosted site: https://windytower-game.herokuapp.com/
 
+### updates
+* jan2016 - countdown moved to hero's head
+* dec2016 - fix only 1 tower health regenerate at a time
+
+
+### todo fixes
+* only 1 tower attack a time // something to do with the timer instance...
+* hero resets to 0  when reborn // tried entity pooling? maybe store variables then reapply 
+* some diagonal bullet spawn off center // tried screen offset change??
+* add upgrade-button background soeasier to see
+
+<hr />
 #Implementation Features Detail:
 ###level/ templates:
+ * homemade level-map from googlemap
  * welmister background, collision
  * layer entities -- change zIndex then call sortentitiesdefer
  * images - transparency
- * get new font color and size/bold? - impact tool 
+ * get new font color and size/bold - impact tool 
  * camera follow player center
- * states  - menu credits game game over
+ * states  - menu/credits/game/game_over
  * timer for bonus
  * text fading and flashing use alpha
  * health bars
@@ -27,6 +39,7 @@ spend many revision over the semester on this final project.
 
 
 ###tower:
+ * homemade tower spritesheet from photoshop
  * change animation  when clicked
  * clickable entity change the display information on the buttons
  * on collision minus health with monster
