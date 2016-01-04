@@ -13,8 +13,8 @@ ig.module(
 monster = ClickableEntity.extend({
 	zIndex:1,
 
+	maxhealth: 10,		
 	health: 10,
-	maxhealth: 10,
 	damage: 0.1,
 
 	type: ig.Entity.TYPE.A,
@@ -47,10 +47,24 @@ monster = ClickableEntity.extend({
         this.addAnim('attacking', 0.25, [24,25,26,27], false);
         this.addAnim('select', 0.1, [32,33,34,35], false);
         this.addAnim('die', 0.1, [32,33,34,35,36,37,38,39], false);
-		this.maxhealth += ig.game.difficulty;		
-		this.health = this.maxhealth;
+        
+        this.maxhealth= 10+Math.round(Math.random()*ig.game.difficulty);
+		this.health= this.maxhealth;
 		this.currentAnim = this.anims.idle;
 	},
+	reset: function( x, y, settings ) {
+        // This function is called when an instance of this class is
+        // resurrected from the entity pool.
+        // The parent implementation of reset() will reset the .pos to 
+        // the given x, y and will reset the .vel, .accel, .health and 
+        // some other properties.
+        this.parent( x, y, settings );
+        
+        // Play the shoot sound again. Remember, init() is never called 
+        // when the entity is revived from the pool.
+        this.maxhealth= 10+Math.round(Math.random()*ig.game.difficulty);
+		this.health= this.maxhealth;
+    },
 	
 	update: function() {
 		this.detecttarget();
@@ -65,7 +79,10 @@ monster = ClickableEntity.extend({
 		}
 
 		if (this.health <=0){
+
 			this.kill();
+			//ig.game.spawnEntity(EntityPickup, this.pos.x, this.pos.y)
+			ig.game.tealfont.draw(' + ' +ig.game.difficulty*3, this.pos.x, this.pos.y);
 			ig.game.currentmonstercount -=1;
 			ig.game.kills +=1;
 			ig.game.score += ig.game.difficulty*10;

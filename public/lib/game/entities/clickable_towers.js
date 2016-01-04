@@ -16,6 +16,7 @@ ig.module(
 		attackTimer: new ig.Timer(0.5),
 		regenTimer: new ig.Timer(0.5),
 		font: new ig.Font('media/font/04b03.font.png'),
+		red_subheaderfont: new ig.Font('media/font/red_subheader.font.png'),
 
 		sound: new ig.Sound('media/sound/attack_book.*'),
 		offset:{x:0,y:20},
@@ -47,19 +48,34 @@ ig.module(
 			this.currentAnim = this.anims.selected;
 			console.log("selected tower");
 		},
-		draw: function() {
+		update: function() {
+			this.parent();
+			this.checkMouse();
 
-			//dont want to overwrite the update method
 			this.find_attack();
 			this.cattack= this.attack_power*200*ig.game.player.costfactor;
 			this.chealth= this.maxhealth*1.5*ig.game.player.costfactor;
 			
 				if (this.health>0 && this.health<=this.maxhealth){
-					this.health +=(this.maxhealth-this.health) * this.regen_power/10;
+					this.health +=(this.maxhealth-this.health) * this.regen_power/100;
 					this.regenTimer.reset();
 				}
 			
+		},
 
+		checkMouse: function() {
+			if(ig.input.pressed('click')) {
+				if( ((ig.input.mouse.x +ig.game.screen.x) >= this.pos.x) &&
+					((ig.input.mouse.x +ig.game.screen.x)<= (this.pos.x + this.size.x)) &&
+					((ig.input.mouse.y +ig.game.screen.y)>= this.pos.y) &&
+					((ig.input.mouse.y +ig.game.screen.y)<= (this.pos.y + this.size.y)))
+				{
+					this.clicked();
+				}
+			}
+		},
+
+		draw: function() {
 
 			//cheange to not select
 			if (ig.game.selectedtower != this.id){
@@ -72,11 +88,12 @@ ig.module(
 				this.pos.y - this.offset.y - ig.game._rscreen.y
 			);
 
+			var xpos = this.pos.x- ig.game._rscreen.x + 15;
+			var ypos = this.pos.y- ig.game._rscreen.y 
 
 	        ig.system.context.fillStyle = "rgb(0,0,0)";
 	        ig.system.context.beginPath();
-	        ig.system.context.rect(this.pos.x- ig.game._rscreen.x-2.5,
-	        						 this.pos.y -ig.game._rscreen.y-2.5,
+	        ig.system.context.rect(xpos-2.5,ypos-2.5,
 	        						 this.scale+5, this.scale/10+5);
 	        ig.system.context.closePath();
 	        ig.system.context.fill(); 
@@ -85,8 +102,7 @@ ig.module(
 			ig.system.context.fillStyle = "rgb(192,192,192)";
 	        ig.system.context.lineWidth = 3;
 	        ig.system.context.beginPath();
-	        ig.system.context.rect(this.pos.x-ig.game._rscreen.x, 
-	        						this.pos.y-ig.game._rscreen.y,
+	        ig.system.context.rect(xpos, ypos,
 	        						this.scale, this.scale/10);
 	        ig.system.context.closePath();
 	        ig.system.context.fill();      
@@ -94,17 +110,19 @@ ig.module(
 	        //current red
 	        ig.system.context.fillStyle = "rgb(255,0,0)";
 	        ig.system.context.beginPath();
-	        ig.system.context.rect(this.pos.x- ig.game._rscreen.x,
-	        						 this.pos.y -ig.game._rscreen.y,
+	        ig.system.context.rect(xpos,ypos,
 	        						 this.health/this.maxhealth*this.scale, this.scale/10);
 	        ig.system.context.closePath();
 	        ig.system.context.fill();	
 
-
+	        if (this.health <=0){
+			this.red_subheaderfont.draw( "buy",xpos,ypos-25,ig.Font.ALIGN.center );
+			this.red_subheaderfont.draw( "health",xpos-15,ypos-0,ig.Font.ALIGN.center );
+	        }
+	        
 	        this.font.draw( Math.round(this.health) + "/"+ Math.round(this.maxhealth),
-	        						 this.pos.x - ig.game._rscreen.x,
-	        						 this.pos.y -ig.game._rscreen.y,
-	        						  ig.Font.ALIGN.Left );
+	        						 xpos,ypos, ig.Font.ALIGN.Left );
+	    	
 		}
 	},
 

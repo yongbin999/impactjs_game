@@ -41,7 +41,7 @@ MyGame = ig.Game.extend({
 	clearColor: '#06030F',
 
 	gameTimer: new ig.Timer(),
-	winTimer: new ig.Timer(30),
+	winTimer: new ig.Timer(0.3),
 	fadeTimer: new ig.Timer(0.1),
 	storyTimer: new ig.Timer(7),
 	resoureTimer: new ig.Timer(1),
@@ -63,6 +63,7 @@ MyGame = ig.Game.extend({
 	GAME_OVER: 2,
 	CREDITS: 3,
 
+	player:null,
 	score: 0,
 	energy: 1000,
 	kills: 0,
@@ -93,6 +94,8 @@ MyGame = ig.Game.extend({
 		ig.input.initMouse();
 		ig.input.bind(ig.KEY.MOUSE1, 'click');
 
+
+		ig.EntityPool.enableFor(EntityPlayer);
 		ig.EntityPool.enableFor(monster);
 		ig.EntityPool.enableFor(bullets);
 
@@ -188,7 +191,7 @@ MyGame = ig.Game.extend({
 						this.winTimer.reset();
 						this.startcountdownwin = true;
 					}
-					else if (this.winTimer.delta() >0) {
+					else if (this.winTimer.delta() >30) {
 						//wins
 							this.starting = 'win';
 							this.wintime = this.gameTimer.delta();
@@ -197,12 +200,13 @@ MyGame = ig.Game.extend({
 							this.startcountdownwin = false;
 					}
 					else{
-						this.countdown = Math.round(0-this.winTimer.delta());
+						this.countdown = Math.round(30-this.winTimer.delta());
 					}
 
 				}
 				else{
 					this.countdown = 30;
+					this.winTimer.reset();
 					this.startcountdownwin = false;
 				}
 				this.spawnObject();
@@ -220,6 +224,7 @@ MyGame = ig.Game.extend({
 					this.state = this.MENU;
 				}
 				else if (this.starting == 'win'){
+					ig.EntityPool.enableFor(EntityPlayer);
 					this.loadLevel(LevelBlank);
 					this.restart_button = this.spawnEntity(Re_Born, 150, 340);
 				}
@@ -317,9 +322,9 @@ MyGame = ig.Game.extend({
 					this.tealfont.draw('Congrats you Win!', this.SCREEN_WIDTH/2, 50);
 
 					this.font.draw('You beat the game in: '+Math.round(this.wintime) +' seconds',50, 50);
-					this.font.draw('Final score: '+this.score,50, 70);
-					this.font.draw('Final energy: '+this.energy,50, 80);
-					this.font.draw('Final kills: '+this.kills,50, 90);
+					this.font.draw('Final score: \t'+Math.round(this.score),50, 70);
+					this.font.draw('Final energy: \t'+Math.round(this.energy),50, 80);
+					this.font.draw('Final kills: \t'+this.kills,50, 90);
 				}
 				else if (this.starting =='lose') {
 					this.tealfont.draw('You\'ve been mowed down by the viscious monsters', 150, 50);
@@ -466,8 +471,24 @@ MyGame = ig.Game.extend({
 	},
 	update_menu_stats: function(){
 
-				this.font.draw('Game Timer: ' + Math.round(this.gameTimer.delta()), 700, 10,ig.Font.ALIGN.Right);
-				this.tealfont.draw('Difficulty: ' + this.difficulty, 650, 20);
+				this.tealfont.draw('Level: ' + this.difficulty, 700, 10);				
+				this.font.draw('Game Timer: \t' + Math.round(this.gameTimer.delta()), 700, 30,ig.Font.ALIGN.Right);
+				this.font.draw('Energy per kill: \t' + this.difficulty*3, 700, 35,ig.Font.ALIGN.Right);
+				
+				this.font.draw( "Copyright@ Yong Liang",700, 390);
+				this.font.draw( "Last Updated: 1/04/2016",700, 385);
+
+
+				towers = ig.game.getEntitiesByType('EntityClickable_towers');
+				this.tealfont.draw('Objective to Win', 210, 10);
+					ig.system.context.fillStyle = "rgb(255,255,0)";
+					ig.system.context.lineWidth = 1;
+			        ig.system.context.beginPath();
+			        ig.system.context.rect(210, 30,175, 3);
+			        ig.system.context.closePath();
+			        ig.system.context.fill();	
+				this.tealfont.draw('>Aquire Towers: ' + this.acquiredtower+'/'+towers.length, 210, 30);
+
 
 				this.tealfont.alpha = 1
 				this.tealfont.draw('Score: \t' + this.score, 10, 5);
@@ -494,11 +515,14 @@ MyGame = ig.Game.extend({
 				this.font.draw('Att:  \t' + this.tower_attackpower, 10, 285);
 				this.font.draw('cost:  \t$' + this.tower_cattack, 10, 310);
 
-
-				towers = ig.game.getEntitiesByType('EntityClickable_towers');
-				this.tealfont.draw('Objective to Win:', 10, 325);
-				this.font.draw('Towers Aquired:  \t' + this.acquiredtower+'/'+towers.length, 10, 350);
-				this.tealfont.draw('Countdown: ' +this.countdown+'\'\' !' , 100, 365,ig.Font.ALIGN.CENTER);
+				//alart counter on heros head
+				if ((this.startcountdownwin ==true)){
+					this.red_subheaderfont.alpha = 1;
+					this.red_subheaderfont.draw('! Countdown: ' +this.countdown+'\'\' !' , 
+					this.player.getCenter().x - ig.game.screen.x, 
+					this.player.getCenter().y - ig.game.screen.y-75,
+					ig.Font.ALIGN.CENTER);
+			}
 	}
 });
 
