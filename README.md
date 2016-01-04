@@ -2,7 +2,7 @@ spend many revision over this project.
 <br>hosted site: https://windytower-game.herokuapp.com/
 
 ### updates
-* jan2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right
+* jan2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top
 * dec2016 - fix only 1 tower health regenerate at a time
 
 
