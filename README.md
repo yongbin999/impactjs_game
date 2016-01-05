@@ -2,8 +2,10 @@ spend many revision over this project.
 <br>hosted site: https://windytower-game.herokuapp.com/
 
 ### updates
-* jan2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top
-* dec2016 - fix only 1 tower health regenerate at a time
+* 12-5-2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top,
+  add upgrade-button background, easier to see
+* 12-30-2016 - fix only 1 tower health regenerate at a time
+* 12-15-2016 - finalized version 1 went live
 
 
 ### todo fixes
@@ -11,7 +13,6 @@ spend many revision over this project.
 * only 1 tower attack a time // something to do with the timer instance...
 * hero resets to 0  when reborn // tried entity pooling? maybe store variables then reapply 
 * some diagonal bullet spawn off center // tried screen offset change??
-* add upgrade-button background soeasier to see
 
 <hr />
 #Implementation Features Detail:
