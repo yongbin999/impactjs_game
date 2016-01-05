@@ -3,7 +3,7 @@ spend many revision over this project.
 
 ### updates
 * 1-05-2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top,
-  add upgrade-button background, easier to see
+  add upgrade-button background, added google ads
 * 12-30-2015 - fix only 1 tower health regenerate at a time
 * 12-15-2015 - finalized version 1 went live
 
