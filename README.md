@@ -30,6 +30,7 @@ spend many revision over this project.
  * scores and resources
  * countdown wins
  * level advancement by timmer and replays
+ * clickable button for upgrades, restartgame 
 
 
 ###player:
