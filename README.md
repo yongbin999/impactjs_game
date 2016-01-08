@@ -2,6 +2,7 @@ spend many revision over this project.
 <br>hosted site: https://windytower-game.herokuapp.com/
 
 ### updates
+* 1-10-2016 - bootstrap template: menu bars and containers
 * 1-05-2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top,
   add upgrade-button background, added google ads
 * 12-30-2015 - fix only 1 tower health regenerate at a time
