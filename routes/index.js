@@ -14,10 +14,5 @@ router.get('/credits', function(req, res, next) {
   res.render('credits', { title: 'Express' });
 });
 
-router.get('/source', function(req, res, next) {
-  res.render('source', { title: 'Express' });
-});
-
-
 
 module.exports = router;
