@@ -1,0 +1,23 @@
+h1{
+
+}
+
+
+p#box{
+    background-color: lightgray;
+    width: 500px;
+    padding: 25px;
+    border: 25px solid gray;
+    margin: 25px;
+    left:100px;
+}
+
+.text{
+	margin-left:100px;
+	margin-top:-280px;
+}
+
+#mo1{
+	padding-top:50px;
+	margin-right: 150px;
+}
