@@ -13,8 +13,8 @@ spend many revision over this project.
 
 
 ## monitize
-https://www.google.com/adsense/app
-https://github.com/googleads/googleads-ima-html5/releases
+<br>https://www.google.com/adsense/app
+<br>https://github.com/googleads/googleads-ima-html5/releases
 
 ### todo fixes
 * spawn $ on kill? currently show on top right
