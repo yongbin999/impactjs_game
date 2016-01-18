@@ -84,10 +84,16 @@
                   </video>
                 </div>
                 <div id="adContainer"></div>
+
+              <button id="playButton" onclick="hide('playButton')">Play</button>
               </div>
-              <button id="playButton">Play</button>
               <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
               <script type="text/javascript" src="simple/ads.js"></script>
+              <script type="text/javascript">
+                  function hide(obj) {
+                    var el = document.getElementById(obj);
+                        el.style.display = 'none';}
+              </script>
 
             </div>
         </div>
