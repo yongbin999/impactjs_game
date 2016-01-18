@@ -1,13 +1,20 @@
 spend many revision over this project.
 <br>hosted site: https://windytower-game.herokuapp.com/
+<br>video ads: https://windytower-game.herokuapp.com/ads
+
 
 ### updates
+* 1-20-2016 - added google adsense video ads, javascript/html5 IMA implementation 
 * 1-10-2016 - bootstrap template: menu bars and containers:  comments, credits, links
 * 1-05-2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top,
   add upgrade-button background, added google ads
 * 12-30-2015 - fix only 1 tower health regenerate at a time
 * 12-15-2015 - finalized version 1 went live
 
+
+## monitize
+https://www.google.com/adsense/app
+https://github.com/googleads/googleads-ima-html5/releases
 
 ### todo fixes
 * spawn $ on kill? currently show on top right
