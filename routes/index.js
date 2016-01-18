@@ -14,5 +14,9 @@ router.get('/credits', function(req, res, next) {
   res.render('credits', { title: 'Express' });
 });
 
+router.get('/ads', function(req, res, next) {
+  res.render('video_ads', { title: 'Express' });
+});
+
 
 module.exports = router;
