@@ -6,8 +6,6 @@
 
 #content, #adContainer {
   position: absolute;
-  top: 0px;
-  left: 0px;
   width: 640px;
   height: 360px;
 }
@@ -19,8 +17,10 @@
 }
 
 #playButton {
-  margin-top:10px;
-  vertical-align: top;
+  position: absolute;
+  margin: auto;
+  //margin-top:10px;
+  //vertical-align: top;
   width: 350px;
   height: 60px;
   padding: 0;
