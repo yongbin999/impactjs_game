@@ -12,11 +12,11 @@ spend many revision over this project.
 * 12-15-2015 - finalized version 1 went live
 
 
-## monitize
+### todo fixes
+* monitize
 <br>https://www.google.com/adsense/app
 <br>https://github.com/googleads/googleads-ima-html5/releases
-
-### todo fixes
+<br>https://support.google.com/adsense/answer/1705831?hl=en
 * spawn $ on kill? currently show on top right
 * only 1 tower attack a time // something to do with the timer instance...
 * hero resets to 0  when reborn // tried entity pooling? maybe store variables then reapply 
