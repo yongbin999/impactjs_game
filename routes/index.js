@@ -3,11 +3,11 @@ var router = express.Router();
 
 //crawlers
 router.get('/robots.txt', function(req, res, next) {
-  res.sendfile('robots.txt', {root: __dirname });
+  res.sendFile('robots.txt', {root: 'public' });
 });
 
 router.get('/sitemap.xml', function(req, res, next) {
-  res.sendfile('sitemap.xml', {root: __dirname });
+  res.sendFile('sitemap.xml', {root: 'public' });
 });
 
 
