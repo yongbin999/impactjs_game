@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
+//crawlers
+router.get('/robots.txt', function(req, res, next) {
+  res.render('robots', { title: 'Express' });
+});
+
+router.get('/sitemap.xml', function(req, res, next) {
+  res.render('sitemap', { title: 'Express' });
+});
+
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
