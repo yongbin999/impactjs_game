@@ -3,11 +3,11 @@ var router = express.Router();
 
 //crawlers
 router.get('/robots.txt', function(req, res, next) {
-  res.render('robots', { title: 'Express' });
+  res.sendfile('robots.txt', {root: __dirname });
 });
 
 router.get('/sitemap.xml', function(req, res, next) {
-  res.render('sitemap', { title: 'Express' });
+  res.sendfile('sitemap.xml', {root: __dirname });
 });
 
 
