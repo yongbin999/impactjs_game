@@ -4,6 +4,7 @@ spend many revision over this project.
 
 
 ### updates
+* 1-30-2016 - added sitemap.xml and robots.txt according to SEO
 * 1-20-2016 - added google adsense video ads, javascript/html5 IMA implementation 
 * 1-10-2016 - bootstrap template: menu bars and containers:  comments, credits, links
 * 1-05-2016 - countdown moved to hero's head, buy tower-health hint, $per kill on right, objective up top,
