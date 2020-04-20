@@ -24,8 +24,9 @@ spend many revision over this project.
 * some diagonal bullet spawn off center // tried screen offset change??
 
 <hr />
-#Implementation Features Detail:
-###level/ templates:
+# Implementation Features Detail:
+
+### level/ templates:
  * homemade level-map from googlemap
  * welmister background, collision
  * layer entities -- change zIndex then call sortentitiesdefer
@@ -42,7 +43,7 @@ spend many revision over this project.
  * clickable button for upgrades, restartgame 
 
 
-###player:
+### player:
  * options for classes and bonuses
  * different animation sprites
  * in range detect closest monsters
@@ -50,29 +51,29 @@ spend many revision over this project.
  * movement facing directions
 
 
-###tower:
+### tower:
  * homemade tower spritesheet from photoshop
  * change animation  when clicked
  * clickable entity change the display information on the buttons
  * on collision minus health with monster
 
-###monster:
+### monster:
  * change animation  when clicked 	
  * built collision using distance to player
  * play sound when attack				
 
-###bullets:
+### bullets:
  * bullets fly spawn entity
  * sound
  * rotate/flip
  * kill() on collision with monster, set moving ignore map collision
 
-###mouse:(not implemented)
+### mouse:(not implemented)
  * hide mouse cursor
  * change mouse display on clickable stuff?					----- not done draw mouse
  * clicked target circle spawn? then kill after 1 second?		----- not done
 
-###scoreboard:(not implemented)
+### scoreboard:(not implemented)
  * create .min.js file  -- use the tool script
  * hosting		- no src files: imact & welmister
 
