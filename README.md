@@ -1,4 +1,4 @@
-spend many revision over this project.
+
 <br>hosted site: https://windytower-game.herokuapp.com/
 <br>video ads: https://windytower-game.herokuapp.com/ads
 
