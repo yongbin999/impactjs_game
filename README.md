@@ -1,6 +1,6 @@
 
-<br>hosted site: https://windytower-game.herokuapp.com/
-<br>video ads: https://windytower-game.herokuapp.com/ads
+<br>hosted site: https://windy-tower-73bee.web.app/
+<br>video ads: https://windy-tower-73bee.web.app/ads
 
 
 ### updates
