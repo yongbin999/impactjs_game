@@ -527,6 +527,6 @@ MyGame = ig.Game.extend({
 });
 
 
-ig.main('#canvas', MyGame, 60, 600, 300, 1);
+ig.main('#canvas', MyGame, 60, 800, 400, 1);
 
 });
