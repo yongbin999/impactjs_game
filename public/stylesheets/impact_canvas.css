@@ -33,8 +33,8 @@ body {
 #game {
 	display: table;
 	margin: 0 auto;
-	min-width: 600px;
-	min-height: 300px;
+	min-width: 640px;
+	min-height: 360px;
 	border: 1px solid;
 	text-align: center;
 }
