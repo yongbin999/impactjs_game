@@ -19,11 +19,8 @@
 #playButton {
   position: absolute;
   display: table;
-  margin: 150px 150px;
-  //margin-top:10px;
-  //vertical-align: top;
-  width: 350px;
-  height: 60px;
+  margin: auto;
+  vertical-align: middle;
   padding: 0;
   font-size: 22px;
   color: white;

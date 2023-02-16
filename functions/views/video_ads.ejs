@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  
+
   <% include partial_head_resource %>
 
     <!-- canvas styles -->
     <link href="stylesheets/impact_canvas.css" rel="stylesheet" type="text/css">
-    
+
     <link rel="stylesheet" type="text/css" href="stylesheets/ads.css">
+    <!-- load game -->
+    <script type="text/javascript" src="game.min.js"></script>
+
 </head>
 
 <body>
-
-
   <% include partial_menu %>
 
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-            <div class="col-lg-12">
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          <div id="ad_space" alt="Google ads">
+            <script data-ad-client="ca-pub-1275631325618401" async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          </div>
+        </h1>
 
-                <h1 class="page-header">
-                <div id="ad_space" alt = "Google ads">
-                  <script data-ad-client="ca-pub-1275631325618401" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      </div>
+    </div>
+    <!-- /.row -->
 
-                </div>
-                </h1>
 
-            </div>
+    <div class="row">
+      <div id="game">
+        <div id="playButton">
+          <button onclick="hide('playButton')">Play 30 Second Ad</button>
         </div>
-        <!-- /.row -->
-  
+        <div id="mainContainer">
+          <div id="content">
+            <video id="contentElement">
+              <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4">
+              </source>
+              <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.webm">
+              </source>
+            </video>
+          </div>
+          <div id="adContainer">
+            <canvas id="canvas">Library Tower Defense at UMass Amherst</canvas>
+          </div>
 
-        <div class="row">
-            <div id="game">
-              <!-- <canvas id="canvas">live node.js server, impact.js html5 framework, homemade tower defense javascript game</canvas>-->
-
-
-              <div id="mainContainer">
-                  <div id="content">
-                  <video id="contentElement">
-                    <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4"></source>
-                    <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.webm"></source>
-                  </video>
-                </div>
-                <div id="adContainer"></div>
-
-              <button id="playButton" onclick="hide('playButton')">Play</button>
-              </div>
-              <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-              <script type="text/javascript" src="js/ads.js"></script>
-              <script type="text/javascript">
-                  function hide(obj) {
-                    var el = document.getElementById(obj);
-                        el.style.display = 'none';}
-              </script>
-
-            </div>
         </div>
-        <!-- /.row -->
+        <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+        <script type="text/javascript" src="js/ads.js"></script>
+        <script type="text/javascript">
+          function hide(obj) {
+            var el = document.getElementById(obj);
+            el.style.display = 'none';
+          }
+        </script>
 
-        <% include partial_footer %>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <% include partial_footer %>
 
 
 </body>
+
 </html>
