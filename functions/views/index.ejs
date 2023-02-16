@@ -1,30 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include partial_head_resource %>
 
+<head>
+  <% include partial_head_resource %>
     <!-- canvas styles -->
     <link href="stylesheets/impact_canvas.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/ads.css" rel="stylesheet" type="text/css">
     <!-- load game -->
     <script type="text/javascript" src="game.min.js"></script>
-  </head>
-  <body>
-    <% include partial_menu %>
+
+</head>
+
+<body>
+  <% include partial_menu %>
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
       <div class="col-lg-12">
+        <h1 class="page-header">
           <div id="ad_space" alt="Google ads">
-       <!-- windy-tower top ad -->
-        </div>
+            <script data-ad-client="ca-pub-1275631325618401" async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          </div>
+        </h1>
+
       </div>
     </div>
     <!-- /.row -->
 
-    <% include video_ads %>
+
+    <div class="row">
+      <div id="game">
+        <canvas id="canvas" style="display: none">Library Tower Defense at UMass Amherst</canvas>
+
+        <div id="mainContainer">
+          <div id="content">
+            <video id="contentElement">
+              <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4">
+              </source>
+              <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.webm">
+              </source>
+            </video>
+          </div>
+          <div id="adContainer"></div>
+          
+        <img id="drawing" src="windy.jpg" alt="game image" style="opacity:20%; display: block;">
+          <button id="playButton" onclick="hide('playButton')">Play Ad to Play</button>
+        </div>
+        <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+        <script type="text/javascript" src="js/ads.js"></script>
+        <script type="text/javascript">
+          function hide(obj) {
+            var el = document.getElementById(obj);
+            el.style.display = 'none';
+            var el = document.getElementById("drawing");
+              el.style.display = 'none';
+
+            setTimeout(function () {
+              var el = document.getElementById("canvas");
+              el.style.display = 'block';
+            }, 3000);
+          }
+        </script>
+      </div>
+    </div>
     <!-- /.row -->
 
     <% include partial_footer %>
-  </body>
+</body>
 </html>
