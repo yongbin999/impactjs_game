@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "npm install && firebase serve"
+    "start": "npm install && firebase serve",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "firebase": "^9.16.0"
