@@ -4,8 +4,8 @@
 <head>
   <% include partial_head_resource %>
     <!-- canvas styles -->
-    <link href="stylesheets/impact_canvas.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/ads.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/impact_canvas.css" rel="stylesheet" type="text/css">
     <!-- load game -->
     <script type="text/javascript" src="game.min.js"></script>
 
@@ -31,10 +31,11 @@
 
     <div class="row">
       <div id="game">
-        <canvas id="canvas" style="display: none">Library Tower Defense at UMass Amherst</canvas>
-
         <div id="mainContainer">
           <div id="content">
+            
+        <img id="drawing" src="windy.jpg" alt="game image" style="opacity:20%; display: block;">
+        <canvas id="canvas" style="display: none">Library Tower Defense at UMass Amherst</canvas>
             <video id="contentElement">
               <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4">
               </source>
@@ -43,8 +44,6 @@
             </video>
           </div>
           <div id="adContainer"></div>
-          
-        <img id="drawing" src="windy.jpg" alt="game image" style="opacity:20%; display: block;">
           <button id="playButton" onclick="hide('playButton')">Play Ad to Play</button>
         </div>
         <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>

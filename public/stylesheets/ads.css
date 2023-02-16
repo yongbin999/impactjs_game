@@ -1,18 +1,12 @@
 #mainContainer {
   position: relative;
-  width: 640px;
-  height: 360px;
 }
 
 #content, #adContainer {
   position: absolute;
-  width: 640px;
-  height: 360px;
 }
 
 #contentElement {
-  width: 640px;
-  height: 360px;
   overflow: hidden;
 }
 
