@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-  <% include partial_head_resource %>
-
-    <!-- canvas styles -->
-    <link href="stylesheets/impact_canvas.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/ads.css" rel="stylesheet" type="text/css">
-    <!-- load game -->
-    <script type="text/javascript" src="game.min.js"></script>
-
-</head>
-
-<body>
-  <% include partial_menu %>
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
@@ -30,7 +13,6 @@
     </div>
     <!-- /.row -->
 
-
     <div class="row">
       <div id="game">
         <canvas id="canvas" style="display: none">Library Tower Defense at UMass Amherst</canvas>
@@ -45,7 +27,9 @@
             </video>
           </div>
           <div id="adContainer"></div>
-          <button id="playButton" onclick="hide('playButton')">Play 30 Second Ad</button>
+          
+        <img src="windy.jpg" alt="game image" style="opacity:20%; display: block;">
+          <button id="playButton" onclick="hide('playButton')">Play Ad to Play</button>
         </div>
         <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
         <script type="text/javascript" src="js/ads.js"></script>
@@ -62,7 +46,3 @@
       </div>
     </div>
     <!-- /.row -->
-
-    <% include partial_footer %>
-</body>
-</html>
