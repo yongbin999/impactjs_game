@@ -31,11 +31,10 @@ body {
 }
 
 #game {
-	display: table;
+	display: flex;
 	margin: 0 auto;
 	min-width: 640px;
 	min-height: 360px;
-	border: 1px solid;
 	text-align: center;
 }
 
